@@ -1,214 +1,221 @@
-# Project Management
+# Task Manager Mobile App (TMApp)
 
-<p align="center">
-    <a href="https://laravel.com"><img alt="Laravel v9.x" src="https://img.shields.io/badge/Laravel-v9.x-FF2D20?style=for-the-badge&logo=laravel"></a>
-    <a href="https://laravel-livewire.com"><img alt="Livewire v2.x" src="https://img.shields.io/badge/Livewire-v2.x-FB70A9?style=for-the-badge"></a>
-    <a href="https://filamentphp.com/"><img alt="Filament v2.x" src="https://img.shields.io/badge/Filament-v2.x-e9b228?style=for-the-badge"></a>
-    <a href="https://php.net"><img alt="PHP 8.0" src="https://img.shields.io/badge/PHP-8.0-777BB4?style=for-the-badge&logo=php"></a>
-    <br/>
-    <a href="https://github.com/devaslanphp/project-management/releases/">
-        <img src="https://img.shields.io/github/tag/devaslanphp/project-management?include_prereleases=&sort=semver&color=blue&style=for-the-badge" alt="GitHub tag">
-    </a>
-    <a href="#license">
-        <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License">
-    </a>
-    <a href="https://github.com/devaslanphp/project-management/issues">
-        <img src="https://img.shields.io/github/issues/devaslanphp/project-management?style=for-the-badge" alt="issues - project-management">
-    </a>
-    <br/>
-    <a href="https://devaslanphp.github.io/project-management" title="Go to project documentation">
-        <img src="https://img.shields.io/badge/view-Documentation-blue?style=for-the-badge" alt="view - Documentation">
-    </a>
-    <br/>
-    <a href="https://hub.docker.com/r/eloufirhatim/helper/tags" title="Docker image">
-        <img src="https://img.shields.io/docker/v/eloufirhatim/helper?label=Docker&logo=docker&style=for-the-badge" alt="Docker image">
-    </a>
-</p>
+A cross-platform Flutter mobile application for task and project management, designed to work with the Laravel Task Manager backend.
 
-# Introduction
+## Features
 
-![logo](readme-logo.png)
+### 🔐 Authentication
+- User login and registration
+- Role-based access control
+- Secure token-based authentication
+- Email verification support
 
-Helper, is a great tool if you want to manage your projects, tickets and be here for your clients
+### 👥 User Roles
+- **Admin**: Full access to all features including user management
+- **Database Manager (DB)**: Can manage projects and tickets
+- **Employee**: Can view and manage tickets
+- **Default User**: Basic access to tickets
 
-It comes also with more than 60 languages ready to use.
+### 📊 Dashboard
+- Personalized statistics based on user role
+- Recent projects and tickets
+- Quick overview of important metrics
 
-All this made with the best technologies.
+### 📁 Projects Management
+- Create, read, update, and delete projects
+- Project status tracking
+- Deadline management
+- Team member assignment
+
+### 🎫 Tickets Management
+- Create, read, update, and delete tickets
+- Ticket status and priority tracking
+- Estimation and deadline management
+- Assignment to team members
+
+### 👤 User Management (Admin Only)
+- Add, edit, and delete users
+- Role assignment
+- User status management
+
+### 🔔 Notifications
+- Local notifications for CRUD operations
+- Auto-disappearing notifications
+- Non-persistent device notifications
+
+### 📱 Cross-Platform
+- Android and iOS support
+- Responsive design
+- Native performance
 
 ## Prerequisites
 
-- PHP 8+
-- MySQL 8+
-- [Pusher](https://pusher.com/) account
+- Flutter SDK (3.0.0 or higher)
+- Dart SDK
+- Android Studio / Xcode (for device testing)
+- Laravel backend running (see main project README)
 
-## Screenshots
+## Installation
 
-<div>
-    <img src="github-contents/1.png" width="20%"></img> 
-    <img src="github-contents/2.png" width="20%"></img> 
-    <img src="github-contents/3.png" width="20%"></img> 
-    <img src="github-contents/4.png" width="20%"></img> 
-    <img src="github-contents/5.png" width="20%"></img> 
-    <img src="github-contents/6.png" width="20%"></img> 
-    <img src="github-contents/7.png" width="20%"></img> 
-    <img src="github-contents/8.png" width="20%"></img> 
-    <img src="github-contents/9.png" width="20%"></img> 
-    <img src="github-contents/10.png" width="20%"></img> 
-    <img src="github-contents/11.png" width="20%"></img> 
-    <img src="github-contents/12.png" width="20%"></img> 
-    <img src="github-contents/13.png" width="20%"></img> 
-    <img src="github-contents/14.png" width="20%"></img> 
-    <img src="github-contents/15.png" width="20%"></img> 
-    <img src="github-contents/16.png" width="20%"></img> 
-    <img src="github-contents/17.png" width="20%"></img> 
-    <img src="github-contents/18.png" width="20%"></img> 
-    <img src="github-contents/19.png" width="20%"></img> 
-    <img src="github-contents/20.png" width="20%"></img> 
-    <img src="github-contents/21.png" width="20%"></img> 
-    <img src="github-contents/22.png" width="20%"></img> 
-    <img src="github-contents/23.png" width="20%"></img> 
-    <img src="github-contents/24.png" width="20%"></img> 
-    <img src="github-contents/25.png" width="20%"></img> 
-    <img src="github-contents/26.png" width="20%"></img> 
-</div>
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd TMApp
+   ```
 
-## Documentation
+2. **Install dependencies**
+   ```bash
+   flutter pub get
+   ```
 
-Full documentation can be viewed online: [Docs](https://devaslanphp.github.io/project-management)
+3. **Configure API endpoint**
+   - Open `lib/services/api_service.dart`
+   - Update the `baseUrl` to match your Laravel backend:
+     ```dart
+     static const String baseUrl = 'http://your-backend-url/api';
+     ```
 
-## Work in progress
+4. **Run the app**
+   ```bash
+   flutter run
+   ```
 
-We are always working to make Project Management a better application, all contributions are welcome.
+## Configuration
 
-## Translations
+### API Configuration
+The app connects to the Laravel backend API. Make sure your backend is running and accessible.
 
-**Important:** translations are automatically generated by Google Translate (using a custom command), so if you find any errors please make sure you create a ticket or add your translations as a contribution to this repository.
+For development:
+- Android Emulator: `http://10.0.2.2:8000/api`
+- iOS Simulator: `http://localhost:8000/api`
+- Physical Device: `http://your-computer-ip:8000/api`
 
-## Credits
+### Permissions
+The app requires the following permissions:
+- Internet access
+- Notification permissions (for local notifications)
 
-- [All Contributors](https://github.com/devaslanphp/project-management/graphs/contributors)
+## Project Structure
+
+```
+lib/
+├── main.dart                 # App entry point
+├── models/                   # Data models
+│   ├── user.dart
+│   ├── project.dart
+│   └── ticket.dart
+├── providers/                # State management
+│   ├── auth_provider.dart
+│   ├── project_provider.dart
+│   ├── ticket_provider.dart
+│   └── user_provider.dart
+├── screens/                  # UI screens
+│   ├── auth/
+│   │   ├── login_screen.dart
+│   │   └── register_screen.dart
+│   ├── dashboard_screen.dart
+│   ├── projects_screen.dart
+│   ├── tickets_screen.dart
+│   ├── users_screen.dart
+│   └── profile_screen.dart
+└── services/                 # API and utility services
+    ├── api_service.dart
+    └── notification_service.dart
+```
+
+## Dependencies
+
+- `http`: HTTP client for API calls
+- `provider`: State management
+- `flutter_secure_storage`: Secure token storage
+- `shared_preferences`: Local data storage
+- `flutter_local_notifications`: Local notifications
+- `permission_handler`: Permission management
+- `connectivity_plus`: Network connectivity
+- `sqflite`: Local database (for offline support)
+- `intl`: Internationalization
+
+## Features in Detail
+
+### Authentication Flow
+1. App starts with splash screen
+2. Checks for existing authentication token
+3. If valid, navigates to main screen
+4. If invalid/missing, shows login screen
+5. After successful login, stores token securely
+
+### Role-Based Access
+- **Admin**: All screens available
+- **DB Manager**: Dashboard, Projects, Tickets, Profile
+- **Employee/Default**: Dashboard, Tickets, Profile
+
+### Offline Support
+- Data caching for offline access
+- Sync when connection restored
+- Local storage for essential data
+
+### Notifications
+- Project CRUD notifications
+- Ticket CRUD notifications
+- User management notifications (admin only)
+- Auto-disappearing after 5 seconds
+
+## Development
+
+### Adding New Features
+1. Create models in `lib/models/`
+2. Add API methods in `lib/services/api_service.dart`
+3. Create providers for state management
+4. Build UI screens
+5. Update navigation as needed
+
+### Testing
+```bash
+flutter test
+```
+
+### Building for Production
+```bash
+# Android
+flutter build apk --release
+
+# iOS
+flutter build ios --release
+```
+
+## Troubleshooting
+
+### Common Issues
+
+1. **API Connection Failed**
+   - Check if Laravel backend is running
+   - Verify API URL in `api_service.dart`
+   - Check network connectivity
+
+2. **Build Errors**
+   - Run `flutter clean`
+   - Run `flutter pub get`
+   - Check Flutter version compatibility
+
+3. **Permission Issues**
+   - Ensure notification permissions are granted
+   - Check device settings
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+This project is licensed under the MIT License.
 
-## Releases
+## Support
 
-- **Release 1.0.0**
-  - First Release
-- **Release 1.1.0**
-  - Add _Road Map_ feature
-  - Manage _Epics_ by projects
-- **Release 1.1.1**
-  - Add issue creation (dialog) into kanban view
-- **Release 1.1.2**
-  - Add Epic parent link (dependencies)
-- **Release 1.1.3**
-  - Translate missing langs
-- **Release 1.1.4**
-  - Bug-fix: Ticket content field (required)
-- **Release 1.1.5**
-  - Add comment field to ticket hours logging
-- **Release 1.1.6**
-    - Edit ticket epic details
-    - PR #13 made by @mihaisolomon
-- **Release 1.1.7**
-    - Ticket attachments
-- **Release 1.1.8**
-    - Time logged activities #25 PR integration
-    - #19 by @mihaisolomon : 
-      - Add new resource `Activity` to referential
-      - Add `Activity` to ticket time logging
-      - Add `Activity` column to Excel exportation
-- **Release 1.1.9**
-    - #32 Default user seeder enhancement
-    - #31 Issue resolved
-- **Release 1.2.0**
-    - Scrum module #28
-    - Design enhancement (Kanban / Scrum boards)
-    - Referential updates
-- **Release 1.2.1**
-    - Add jira integration #36
-    - New feature: Import jira projects / tickets
-- **Release 1.2.2**
-    - Dockerize application #23 
-    - PR #45 
-- **Release 1.2.3**
-    - Update german language #52
-    - SSO with OpenID (OIDC) #48
-    - 
-    - 
-    - 
-    
-
-
-
-
-
-
-
-
-daily notification setting
-/home/manish41/public_html/TM/app/Console/Kernel.php
-
- $schedule->command('send:daily-reminders')->dailyAt('6:00');
-    $schedule->command('send:daily-reminders')->dailyAt('9:00');
-    $schedule->command('send:daily-reminders')->dailyAt('21:30');
-
-
-
-
-
-
-
-
-
-
-
-### Thanks to anyone who helps make this project better :heart:
-
-## Sponsors
-
-<div>
-    <a href="https://github.com/moustou1993"><img src="https://avatars.githubusercontent.com/u/48994051?v=4" width="40" /></a>
-    <a href="https://github.com/matbgn"><img src="https://avatars.githubusercontent.com/u/13169819?v=4" width="40" /></a>
-</div>
-
-## Contributors
-
-<div>
-    <a href="https://github.com/heloufir"><img src="https://avatars.githubusercontent.com/u/6197875?v=4" width="40" /></a>
-    <a href="https://github.com/mihaisolomon"><img src="https://avatars.githubusercontent.com/u/17908506?v=4" width="40" /></a>
-    <a href="https://github.com/TheZoker"><img src="https://avatars.githubusercontent.com/u/1368405?v=4" width="40" /></a>
-    <a href="https://github.com/JaccoVE"><img src="https://avatars.githubusercontent.com/u/34547046?v=4" width="40" /></a>
-    <a href="https://github.com/leozfr"><img src="https://avatars.githubusercontent.com/u/57966806?v=4" width="40" /></a>
-</div>
-
-## Support us
-
-<a href="https://www.buymeacoffee.com/heloufir" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-04july2025
-
-To enable/disable admin notifications for projects or tickets, just change the return value of the relevant method in GeneralSettings.php
-  public function notifyAdminProjectEvents(): bool { return true; } // or false
-  public function notifyAdminTicketEvents(): bool { return true; } // or false
-  public function notifyAdminUserEvents(): bool { return true; } // or false
+For support and questions:
+- Check the main Laravel project documentation
+- Review the API documentation
+- Create an issue in the repository
